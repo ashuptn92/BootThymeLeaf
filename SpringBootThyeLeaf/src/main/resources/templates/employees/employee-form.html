@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thyme.org">
+<head>
+  <title>Save Employee</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="container">
+	<h3>Employee Directory</h3>
+	<hr>
+	<p class="h4 mb-4">Save Employee</p>
+	<form action="" th:action="@{/employees/save}" th:object="${employee}" method="POST">
+		<input type="text" th:fiels="*{empName}" class="form-control mb-4 col-4" placeholder="Enter your name">
+		<input type="text" th:fiels="*{empSal}" class="form-control mb-4 col-4" placeholder="Enter your salary">
+		<input type="text" th:fiels="*{designation}" class="form-control mb-4 col-4" placeholder="Enter your designation">
+		<input type="text" th:fiels="*{empDept}" class="form-control mb-4 col-4" placeholder="Enter your department name">
+		<input type="text" th:fiels="*{empMail}" class="form-control mb-4 col-4" placeholder="Enter your email id">
+		<input type="text" th:fiels="*{mobile}" class="form-control mb-4 col-4" placeholder="Enter your mobile number">
+		<input type="text" th:fiels="*{created}" class="form-control mb-4 col-4" placeholder="Enter your created date">
+		<input type="text" th:fiels="*{updated}" class="form-control mb-4 col-4" placeholder="Enter your updated date">
+		<button type="submit" class="btn btn-info col-2">Save</button>
+	</form>
+	<hr>
+	<a th:href="@{/employees/list}">Back To Employee</a>
+</div>
+</body>
+</html>

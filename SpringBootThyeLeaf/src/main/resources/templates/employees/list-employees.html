@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thyme.org">
+<head>
+  <title>Employee Directory</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+<h3>Employee Directory</h3>
+<hr>
+<a th:href="@{/employees/showFormForAdd}" class="btn btn-primary btn-sm mb-3">Add Employee</a>
+ <table class="table table-bordered table-striped">
+<thead class="thead-dark">
+<tr>
+<th>Name</th>
+<th>Name</th>
+<th>Name</th>
+<th>Name</th>
+<th>Name</th>
+<th>Name</th>
+<th>Name</th>
+<th>Name</th>
+</tr>
+</thead>
+<tbody>
+<tr th:each="emp : ${employees}">
+<td th:text="${emp.empId}" />
+<td th:text="${emp.empName}" />
+<td th:text="${emp.empSal}" />
+<td th:text="${emp.designation}" />
+<td th:text="${emp.empDept}" />
+<td th:text="${emp.empMail}" />
+<td th:text="${emp.mobile}" />
+<td th:text="${emp.created}" />
+<td th:text="${emp.updated}" />
+</tr>
+</tbody>
+</table>
+</div>
+</body>
+</html>

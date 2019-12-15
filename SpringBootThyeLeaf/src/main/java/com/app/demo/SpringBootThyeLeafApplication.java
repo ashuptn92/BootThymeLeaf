@@ -9,5 +9,4 @@ public class SpringBootThyeLeafApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(SpringBootThyeLeafApplication.class, args);
 	}
-
 }
