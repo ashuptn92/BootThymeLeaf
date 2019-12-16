@@ -7,6 +7,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+
 import com.app.demo.entity.Employee;
 import com.app.demo.service.IEmployeeService;
 
@@ -23,7 +25,7 @@ public class EmployeeRestController {
 	
 	@GetMapping("/list")
 	public String listEmp(Model model) {
-		List<Employee> listOfEmp = service.getAllEmployees();
+		List<Employee> listOfEmp = service.findAll();
 		model.addAttribute("employees", listOfEmp);
 		return "employees/list-employees";
 	}
@@ -37,7 +39,20 @@ public class EmployeeRestController {
 	
 	@PostMapping("/save")
 	public String saveEmployee(@ModelAttribute("employee") Employee theEmployee) {
-		service.saveEmployee(theEmployee);
+		service.save(theEmployee);
+		return "redirect:/employees/list";
+	}
+	
+	@GetMapping("/showFormForUpdate")
+	public String showFormForUpdate(@RequestParam("employeeId") int theId, Model model) {
+		Employee emp = service.findById(theId);
+		model.addAttribute("employee", emp);
+		return "";
+	}
+	
+	@GetMapping("/delete")
+	public String delete(@RequestParam("employeeId") int theId) {
+		service.deleteById(theId);
 		return "redirect:/employees/list";
 	}
 }

@@ -40,7 +40,6 @@ public class Employee {
 
 	public Employee(int empId, String empName, double empSal, String designation, String empDept, String empMail,
 			long mobile, Date created, Date updated) {
-		super();
 		this.empId = empId;
 		this.empName = empName;
 		this.empSal = empSal;
@@ -52,6 +51,17 @@ public class Employee {
 		this.updated = updated;
 	}
 
+	public Employee(String empName, double empSal, String designation, String empDept, String empMail, long mobile,
+			Date created, Date updated) {
+		this.empName = empName;
+		this.empSal = empSal;
+		this.designation = designation;
+		this.empDept = empDept;
+		this.empMail = empMail;
+		this.mobile = mobile;
+		this.created = created;
+		this.updated = updated;
+	}
 
 	public int getEmpId() {
 		return empId;

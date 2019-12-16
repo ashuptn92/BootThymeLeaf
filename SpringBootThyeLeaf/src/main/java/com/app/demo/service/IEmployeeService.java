@@ -3,8 +3,14 @@ import java.util.List;
 import com.app.demo.entity.Employee;
 
 public interface IEmployeeService {
-	public void saveEmployee(Employee emp);
-	public void deleteEmployee(int empId);
-	public Employee getEmployeeById(int empId);
-	public List<Employee> getAllEmployees();
+	
+	public List<Employee> findAll();
+	
+	public Employee findById(int theId);
+	
+	public void save(Employee theEmployee);
+	
+	public void deleteById(int theId);
+
+	public List<Employee> searchBy(String theName);
 }
